@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game2048"
         mc:Ignorable="d"
-        Title="MainWindow" Height="470" Width="600">
+        Title='Game named "2048"' Height="470" ResizeMode="NoResize" Width="600" KeyDown="Window_OnKeyDown">
     <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="70" />
@@ -15,10 +15,14 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" Height="70">
-            <Label FontSize="18" VerticalAlignment="Center" >Score:</Label>
-            <Label FontSize="40" VerticalAlignment="Center" x:Name="scoreLabel">2048</Label>
-        </StackPanel>
-
+        <DockPanel Grid.Column="0" Grid.Row="0" Height="70">
+            <Label DockPanel.Dock="Left" FontSize="18" VerticalAlignment="Center" Margin="15,0,0,0">Score:</Label>
+            <Label DockPanel.Dock="Left" FontSize="40" VerticalAlignment="Center" x:Name="scoreLabel">2048</Label>
+            <Label DockPanel.Dock="Right" FontSize="40" VerticalAlignment="Center" x:Name="turnsLabel" Margin="0,0,15,0">23</Label>
+            <Label DockPanel.Dock="Right" FontSize="18"  VerticalAlignment="Center">Turns:</Label>
+            <TextBlock DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="WrapWithOverflow" Width="110" Height="36" Margin="0,20,0,14">
+                Use arrows to controll the game.
+            </TextBlock>
+        </DockPanel>
     </Grid>
 </Window>
